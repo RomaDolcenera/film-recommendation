@@ -5,4 +5,4 @@ seaborn
 wordcloud
 uvicorn
 fastapi
--U scikit-learn
+scikit-learn
