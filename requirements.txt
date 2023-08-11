@@ -1,0 +1,9 @@
+pip install pandas
+pip install numpy
+pip install matplotlib
+pip install seaborn
+pip install wordcloud
+pip install uvicorn
+pip install fastapi
+pip install -U scikit-learn
+pip install -U scikit-learn
