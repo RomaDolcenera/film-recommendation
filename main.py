@@ -11,8 +11,8 @@ def read_root():
     return {"Hello": "World"}
 
 
-dfm = pd.read_csv("../movies_clean.csv",sep = ',', encoding="UTF-8", low_memory=False)
-dfc = pd.read_csv("../credits_clean.csv")
+dfm = pd.read_csv("./movies_clean.csv",sep = ',', encoding="UTF-8", low_memory=False)
+dfc = pd.read_csv("./credits_clean.csv")
 
 @app.get("/")
 def read_root():
