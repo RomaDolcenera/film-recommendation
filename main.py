@@ -1,18 +1,12 @@
 from fastapi import FastAPI
 import pandas as pd
-import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-app= FastAPI()
-
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
-
-
 dfm = pd.read_csv("./movies_clean.csv",sep = ',', encoding="UTF-8", low_memory=False)
 dfc = pd.read_csv("./credits_clean.csv")
+
+app = FastAPI()
 
 @app.get("/")
 def read_root():
@@ -85,7 +79,6 @@ def read_item(productora: str):
         mensaje = f'La productora {productora} realizó {suma} películas, con una ganancia total de {ganancia_total}'
         return {"mensaje": mensaje}
 
-
 #Se ingresa el nombre de un director que se encuentre dentro de un dataset debiendo devolver el éxito del mismo medido a través del retorno. Además, deberá devolver el nombre de cada película con la fecha de lanzamiento, retorno individual, costo y ganancia de la misma, en formato lista.
 @app.get("/get_director/{director}")
 def read_item(director: str):
@@ -104,7 +97,6 @@ def read_item(director: str):
             "Mejor Pelicula": best_movie['title'],
             "Lista de Peliculas": list_movies
             }
-
 
 @app.get("/recomendacion/{titulo}")
 def read_item(titulo: str):
